@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  background: #0f0f1a;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 180, 200, 0.12), transparent 24%),
+    radial-gradient(circle at 80% 0%, rgba(196, 181, 253, 0.08), transparent 22%),
+    #0f0f1a;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top, rgba(255, 180, 200, 0.22), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(196, 181, 253, 0.18), transparent 24%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+.scroll-fade {
+  mask-image: linear-gradient(to bottom, transparent 0, black 16px, black calc(100% - 18px), transparent 100%);
+}
